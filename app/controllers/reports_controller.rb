@@ -15,6 +15,12 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
+    if session[:block_id]
+      @report.block_id = session[:block_id]
+    end
+    if session[:date]
+      @report.date = session[:date]
+    end
   end
 
   # GET /reports/1/edit
@@ -25,6 +31,10 @@ class ReportsController < ApplicationController
   # POST /reports.json
   def create
     @report = Report.new(report_params)
+#session[:date] = report_params.date
+#puts 'PARAMS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + report_params
+    session[:date] = @report.date
+    session[:block_id] = @report.block_id
 
     respond_to do |format|
       if @report.save
