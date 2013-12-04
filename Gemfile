@@ -55,3 +55,9 @@ end
 
 gem 'carrierwave'
 gem 'devise'
+gem 'cucumber-rails', :group => :test, :require => false
+gem 'capybara', :group => :test
+gem 'database_cleaner', :group => :test
+gem 'email_spec', :group => :test
+gem 'factory_girl_rails', :group => [:devloplment, :test]
+gem 'rspec-rails', :group => [:devlopment, :test]
