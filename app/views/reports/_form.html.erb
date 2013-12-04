@@ -12,41 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :activity %><br>
-    <%= f.text_field :activity %>
+    <%= f.label 'Which block is this report for?' %><br>
+    <%= f.collection_select :block_id, Block.where(:user_id => current_user.id), :id, :block_number, :prompt => false  %>
   </div>
+
   <div class="field">
-    <%= f.label :block_id %><br>
-    <%= f.number_field :block_id %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
+    <%= f.label 'Which date was the observation made on?' %><br>
     <%= f.date_select :date %>
   </div>
+
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.label 'What activity would you like to report?' %><br>
+    <%= f.select :activity, [['New plug', 'new'], ['Change in plug', 'change'], ['Something other than plug in tunnel', 'other'], ['Miscellaneous observation', 'other'], ['No activity', 'none']] %>
   </div>
-  <div class="field">
-    <%= f.label :plug_state %><br>
-    <%= f.text_field :plug_state %>
-  </div>
-  <div class="field">
-    <%= f.label :plug_type %><br>
-    <%= f.text_field :plug_type %>
-  </div>
-  <div class="field">
-    <%= f.label :pluga %><br>
-    <%= f.text_field :pluga %>
-  </div>
-  <div class="field">
-    <%= f.label :plugn %><br>
-    <%= f.number_field :plugn %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

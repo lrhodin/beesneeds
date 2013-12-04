@@ -4,7 +4,7 @@ class BlocksController < ApplicationController
   # GET /blocks
   # GET /blocks.json
   def index
-    @blocks = Block.all
+    @blocks = Block.where(:user_id => current_user.id)
   end
 
   # GET /blocks/1
@@ -25,6 +25,7 @@ class BlocksController < ApplicationController
   # POST /blocks.json
   def create
     @block = Block.new(block_params)
+    @block.user_id = current_user.id
 
     respond_to do |format|
       if @block.save
