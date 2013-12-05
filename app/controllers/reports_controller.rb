@@ -1,42 +1,41 @@
+# Handles HTTP requests for Reports
 class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
 
   # Support for the following requests:
-  # 1. GET /reports
-  # 2. GET /reports.json
+  # * GET /reports
+  # * GET /reports.json
   def index
     @reports = current_user.reports
   end
 
+  # Support for the following requests:
   # * GET /reports/1
   # * GET /reports/1.json
   def show
   end
 
+  # Support for the following requests:
   # * GET /reports/new
   def new
     if current_user.blocks.count == 0
       redirect_to blocks_url, notice: 'Please register a block first.'
     end
     @report = Report.new
-    if session[:block_id]
-      @report.block_id = session[:block_id]
-    end
-    if session[:date]
-      @report.date = session[:date]
-    end
+    @report.block_id = session[:block_id]
+    @report.date = session[:date]
   end
 
+  # Support for the following requests:
   # * GET /reports/1/edit
   def edit
   end
 
+  # Support for the following requests:
   # * POST /reports
   # * POST /reports.json
   def create
     @report = Report.new(report_params)
-#session[:date] = report_params.date
-#puts 'PARAMS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + report_params
     session[:date] = @report.date
     session[:block_id] = @report.block_id
 
@@ -51,6 +50,7 @@ class ReportsController < ApplicationController
     end
   end
 
+  # Support for the following requests:
   # * PATCH/PUT /reports/1
   # * PATCH/PUT /reports/1.json
   def update
@@ -65,6 +65,7 @@ class ReportsController < ApplicationController
     end
   end
 
+  # Support for the following requests:
   # * DELETE /reports/1
   # * DELETE /reports/1.json
   def destroy
