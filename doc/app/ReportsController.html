@@ -140,6 +140,8 @@
 
   <div id="description" class="description">
     
+<p>Handles HTTP requests for Reports</p>
+
   </div><!-- description -->
 
   
@@ -171,7 +173,8 @@
 
         <div class="method-description">
           
-          <ul><li>
+          <p>Support for the following requests:</p>
+<ul><li>
 <p>POST /reports</p>
 </li><li>
 <p>POST /reports.json</p>
@@ -180,24 +183,22 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 36</span>
-  <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
-    <span class="ruby-ivar">@report</span> = <span class="ruby-constant">Report</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">report_params</span>)
-<span class="ruby-comment">#session[:date] = report_params.date</span>
-<span class="ruby-comment">#puts 'PARAMS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + report_params</span>
-    <span class="ruby-identifier">session</span>[<span class="ruby-value">:date</span>] = <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">date</span>
-    <span class="ruby-identifier">session</span>[<span class="ruby-value">:block_id</span>] = <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">block_id</span>
+            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@report</span> = <span class="ruby-constant">Report</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">report_params</span>)
+  <span class="ruby-identifier">session</span>[<span class="ruby-value">:date</span>] = <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">date</span>
+  <span class="ruby-identifier">session</span>[<span class="ruby-value">:block_id</span>] = <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">block_id</span>
 
-    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">save</span>
-        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@report</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Report was successfully created.'</span> }
-        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">'show'</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:created</span>, <span class="ruby-identifier">location</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@report</span> }
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">'new'</span> }
-        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:unprocessable_entity</span> }
-      <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@report</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Report was successfully created.'</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">'show'</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:created</span>, <span class="ruby-identifier">location</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@report</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">'new'</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">end</span></pre>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
           </div><!-- create-source -->
           
         </div>
@@ -219,7 +220,8 @@
 
         <div class="method-description">
           
-          <ul><li>
+          <p>Support for the following requests:</p>
+<ul><li>
 <p>DELETE /reports/1</p>
 </li><li>
 <p>DELETE /reports/1.json</p>
@@ -228,7 +230,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 70</span>
+            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
@@ -257,7 +259,8 @@
 
         <div class="method-description">
           
-          <ul><li>
+          <p>Support for the following requests:</p>
+<ul><li>
 <p>GET /reports/1/edit</p>
 </li></ul>
           
@@ -289,16 +292,16 @@
         <div class="method-description">
           
           <p>Support for the following requests:</p>
-<ol><li>
+<ul><li>
 <p>GET /reports</p>
 </li><li>
 <p>GET /reports.json</p>
-</li></ol>
+</li></ul>
           
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 7</span>
+            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
   <span class="ruby-ivar">@reports</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">reports</span>
 <span class="ruby-keyword">end</span></pre>
@@ -323,25 +326,22 @@
 
         <div class="method-description">
           
-          <ul><li>
+          <p>Support for the following requests:</p>
+<ul><li>
 <p>GET /reports/new</p>
 </li></ul>
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">blocks</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
     <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">blocks_url</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Please register a block first.'</span>
   <span class="ruby-keyword">end</span>
   <span class="ruby-ivar">@report</span> = <span class="ruby-constant">Report</span>.<span class="ruby-identifier">new</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:block_id</span>]
-    <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">block_id</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:block_id</span>]
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:date</span>]
-    <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">date</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:date</span>]
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">block_id</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:block_id</span>]
+  <span class="ruby-ivar">@report</span>.<span class="ruby-identifier">date</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:date</span>]
 <span class="ruby-keyword">end</span></pre>
           </div><!-- new-source -->
           
@@ -364,7 +364,8 @@
 
         <div class="method-description">
           
-          <ul><li>
+          <p>Support for the following requests:</p>
+<ul><li>
 <p>GET /reports/1</p>
 </li><li>
 <p>GET /reports/1.json</p>
@@ -373,7 +374,7 @@
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 13</span>
+            <pre><span class="ruby-comment"># File app/controllers/reports_controller.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- show-source -->
@@ -397,7 +398,8 @@
 
         <div class="method-description">
           
-          <ul><li>
+          <p>Support for the following requests:</p>
+<ul><li>
 <p>PATCH/PUT /reports/1</p>
 </li><li>
 <p>PATCH/PUT /reports/1.json</p>

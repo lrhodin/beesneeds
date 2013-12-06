@@ -140,6 +140,8 @@
 
   <div id="description" class="description">
     
+<p>Handles HTTP requests for Blocks</p>
+
   </div><!-- description -->
 
   
@@ -176,7 +178,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 26</span>
+            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@block</span> = <span class="ruby-constant">Block</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">block_params</span>)
   <span class="ruby-ivar">@block</span>.<span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>
@@ -217,7 +219,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 57</span>
+            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@block</span>.<span class="ruby-identifier">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
@@ -251,7 +253,7 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- edit-source -->
@@ -280,7 +282,7 @@
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 6</span>
+            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
   <span class="ruby-ivar">@blocks</span> = <span class="ruby-constant">Block</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -310,7 +312,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@block</span> = <span class="ruby-constant">Block</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -340,7 +342,7 @@
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 12</span>
+            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- show-source -->
@@ -369,7 +371,7 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 43</span>
+            <pre><span class="ruby-comment"># File app/controllers/blocks_controller.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@block</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">block_params</span>)
