@@ -1,3 +1,4 @@
+# User model
 class User < ActiveRecord::Base
   has_many :blocks
   has_many :reports, through: :blocks

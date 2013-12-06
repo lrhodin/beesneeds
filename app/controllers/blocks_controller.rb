@@ -1,3 +1,4 @@
+# Handles HTTP requests for Blocks
 class BlocksController < ApplicationController
   before_action :set_block, only: [:show, :edit, :update, :destroy]
 
