@@ -52,39 +52,3 @@ describe "User successfully creates report" do
 
   end
 end
-
-describe "User successfully creates and edits report" do
-  it "will let a user create a report and then edit it" do
-
-    user = User.create(     :email => "e@e.com",
-                            :password => "password")
-
-    visit "/users/sign_in"
-    
-    fill_in "user_email",              :with => "e@e.com"
-    fill_in "user_password",           :with => "password"
-
-    click_button "Sign in"
-    
-
-
-    visit "/blocks"
-
-    visit "/blocks/new"
-    fill_in "block_block_number",      :with => "141002"
-
-    click_button "Create Block"
-
-    visit "/reports/new"
-    
-    click_button "Create Report"
-
-    visit "/reports/1/edit"
-    click_button "Update Report"
-    page.should have_content("Report was successfully updated.")
-
-  end
-end
-
-
-
