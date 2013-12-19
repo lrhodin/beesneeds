@@ -46,9 +46,9 @@ describe "User successfully creates report" do
 
     visit "/reports/new"
     
-    click_button "Create Report"
-
-    page.should have_content("Report was successfully created.")
+    click_button "Continue"
+    click_button "Continue"
+    page.should have_content("Report saved")
 
   end
 end
@@ -77,10 +77,11 @@ describe "User successfully creates and edits report" do
 
     visit "/reports/new"
     
-    click_button "Create Report"
+    click_button "Continue"
+    click_button "Continue"
 
     visit "/reports/1/edit"
-    click_button "Update Report"
+    click_button "Continue"
     page.should have_content("Report was successfully updated.")
 
   end

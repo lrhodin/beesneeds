@@ -50,7 +50,7 @@ describe "Create duplicate block" do
 
     click_button "Create Block"
     
-    #page.should have_content("Block number has already been taken")
+    page.should have_content("Block number has already been taken")
 
   end  
 end
