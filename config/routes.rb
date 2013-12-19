@@ -1,6 +1,7 @@
 Beesneeds::Application.routes.draw do
   get "pages/home"
   get "pages/stat"
+  get "pages/info"
   devise_for :users
   resources :reports
 

@@ -1,3 +1,5 @@
+This chart shows number of reports per day, going back 15 days. The first row is TODAY!
+
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
@@ -16,7 +18,7 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var data = [4, 8, 15, 16, 23, 42];
+var data= <%= @data.to_json %> ;
 
 var x = d3.scale.linear()
     .domain([0, d3.max(data)])
