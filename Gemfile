@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -63,3 +64,4 @@ gem 'factory_girl_rails', :group => [:devloplment, :test]
 gem 'rspec-rails', :group => [:devlopment, :test]
 gem 'reek'
 gem 'd3-rails'
+#gem "galetahub-simple_captcha", :require => "simple_captcha"

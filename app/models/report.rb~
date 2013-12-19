@@ -26,8 +26,4 @@ class Report < ActiveRecord::Base
    current_step == steps.first
  end
 
- def last_page?
-  current_step == steps.last
- end
-
 end

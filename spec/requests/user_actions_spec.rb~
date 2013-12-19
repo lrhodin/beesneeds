@@ -36,23 +36,6 @@ describe "user sign in" do
   end
 end
 
-describe "unauthenticated user sign in" do
-  it "won't let a user with invalid credentials log in" do
-
-    visit "/users/sign_in"
-
-    fill_in "user_email",              :with => "example@example.com"
-    fill_in "user_password",           :with => "what"
-
-    click_button "Sign in"
-
-    page.should have_content("Invalid email or password.")
-
-  end
-end
-  
-  
-
 
     
 
