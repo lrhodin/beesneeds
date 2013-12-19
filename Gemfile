@@ -62,3 +62,4 @@ gem 'email_spec', :group => :test
 gem 'factory_girl_rails', :group => [:devloplment, :test]
 gem 'rspec-rails', :group => [:devlopment, :test]
 gem 'reek'
+gem 'd3-rails'
