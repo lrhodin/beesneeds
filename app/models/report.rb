@@ -30,4 +30,5 @@ class Report < ActiveRecord::Base
   current_step == steps.last
  end
 
+
 end

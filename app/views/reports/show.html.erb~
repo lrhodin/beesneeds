@@ -36,12 +36,12 @@
 </p>
 
 <p>
-  <strong>Plug Letter:</strong>
+  <strong>Plug row:</strong>
   <%= @report.pluga %>
 </p>
 
 <p>
-  <strong>Plug Number:</strong>
+  <strong>Plug column:</strong>
   <%= @report.plugn %>
 </p>
 
